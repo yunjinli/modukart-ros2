@@ -1,0 +1,6 @@
+[submodule "sensor_pipeline"]
+	path = sensor_pipeline
+	url = https://github.com/yunjinli/sensor_pipeline.git
+[submodule "data_pipeline"]
+	path = data_pipeline
+	url = https://github.com/yunjinli/data_pipeline.git
