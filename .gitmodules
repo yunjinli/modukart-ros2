@@ -4,3 +4,6 @@
 [submodule "data_pipeline"]
 	path = data_pipeline
 	url = https://github.com/yunjinli/data_pipeline.git
+[submodule "control_pipeline"]
+	path = control_pipeline
+	url = https://github.com/yunjinli/control_pipeline.git
