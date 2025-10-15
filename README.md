@@ -1,4 +1,5 @@
-# modukart-ros2
+# Modukart Platform
+
 ROS 2 Project for Modular Kart Platform
 
 
