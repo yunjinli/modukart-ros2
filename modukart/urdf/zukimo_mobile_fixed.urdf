@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="(Unsaved)">
+    <link name="Back_wheels">
+        <inertial>
+            <origin xyz="3.842196187875402e-09 -0.00020507013501120497 -0.022227366047362317" rpy="1.0270412732280397e-91 -0.0 0.0" />
+            <mass value="20.66206902776893" />
+            <inertia ixx="0.2438239801543789" iyy="0.24382049517018312" izz="0.07998280022014725" ixy="-1.0047518372857667e-14" iyz="-0.0003724536269543721" ixz="-1.3550272015550036e-13" />
+        </inertial>
+        <visual name="Back_wheels_visual">
+            <origin xyz="3.842252107588706e-09 -0.2549864591128662 -0.0251377539084877" rpy="-1.570796326792494 -1.570256115713959 -1.5707963268000877" />
+            <geometry>
+                <mesh filename="package://modukart/meshes/Back_wheels.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="Back_wheels_collision">
+            <origin xyz="3.842252107588706e-09 -0.2549864591128662 -0.0251377539084877" rpy="-1.570796326792494 -1.570256115713959 -1.5707963268000877" />
+            <geometry>
+                <mesh filename="package://modukart/meshes/Back_wheels.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="Front_wheel_left">
+        <inertial>
+            <origin xyz="4.535136728378575e-09 1.3505946814795778e-05 -0.02499999905359404" rpy="1.7516230804060213e-46 -0.0 0.0" />
+            <mass value="10.124080229337785" />
+            <inertia ixx="0.02320706211644341" iyy="0.023207067658124324" izz="0.04219575192948445" ixy="6.858402734621906e-14" iyz="-1.0257901648075277e-05" ixz="8.326672684688677e-17" />
+        </inertial>
+        <visual name="Front_wheel_left_visual">
+            <origin xyz="4.529884414239405e-09 -0.2549324357268817 -0.12513773828112604" rpy="1.5707963267972227 1.570256115713959 1.570796326797222" />
+            <geometry>
+                <mesh filename="package://modukart/meshes/Front_wheel_left.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="Front_wheel_left_collision">
+            <origin xyz="4.529884414239405e-09 -0.2549324357268817 -0.12513773828112604" rpy="1.5707963267972227 1.570256115713959 1.570796326797222" />
+            <geometry>
+                <mesh filename="package://modukart/meshes/Front_wheel_left.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="front_wheel_right">
+        <inertial>
+            <origin xyz="3.842252516150779e-09 -1.3505934469755232e-05 0.024999993048396868" rpy="1.7516230804060213e-46 -0.0 0.0" />
+            <mass value="10.201325598573922" />
+            <inertia ixx="0.02322436465106581" iyy="0.023224370188151884" izz="0.04219817143230854" ixy="-5.551115123125784e-16" iyz="-1.0249861668698571e-05" ixz="4.3021142204224826e-16" />
+        </inertial>
+        <visual name="front_wheel_right_visual">
+            <origin xyz="0.25500000384225274 -6.752703993608834e-05 0.12499997845699663" rpy="1.4910418945830205e-12 1.570256115713959 1.5707963267972223" />
+            <geometry>
+                <mesh filename="package://modukart/meshes/front_wheel_right.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="front_wheel_right_collision">
+            <origin xyz="0.25500000384225274 -6.752703993608834e-05 0.12499997845699663" rpy="1.4910418945830205e-12 1.570256115713959 1.5707963267972223" />
+            <geometry>
+                <mesh filename="package://modukart/meshes/front_wheel_right.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="camera-module">
+        <inertial>
+            <origin xyz="3.781530916220133e-05 0.03299377486128144 0.010232648764664525" rpy="0.0 9.723461371658034e-63 0.0" />
+            <mass value="0.8784846570711062" />
+            <inertia ixx="0.0002968041353251516" iyy="0.0006932091965755685" izz="0.0009193883157832816" ixy="-2.0997045332114828e-07" iyz="-2.5351192149219992e-05" ixz="-7.091543648323276e-07" />
+        </inertial>
+        <visual name="camera-module_visual">
+            <origin xyz="0.0027498813932640134 0.47510807615774825 -0.25749855157291784" rpy="1.5707963267948972 -0.0005402110809374263 2.8042867269018938e-15" />
+            <geometry>
+                <mesh filename="package://modukart/meshes/camera-module.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="camera-module_collision">
+            <origin xyz="0.0027498813932640134 0.47510807615774825 -0.25749855157291784" rpy="1.5707963267948972 -0.0005402110809374263 2.8042867269018938e-15" />
+            <geometry>
+                <mesh filename="package://modukart/meshes/camera-module.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="frame">
+        <inertial>
+            <origin xyz="-4.620511364348385e-12 0.015070821550716295 0.06669557803553043" rpy="0.0 0.0 0.0" />
+            <mass value="42.72303096681609" />
+            <inertia ixx="2.1374905124329038" iyy="0.3993501601802626" izz="2.014479135732941" ixy="4.6372567461330854e-11" iyz="-0.04770246035593604" ixz="1.594343484387785e-11" />
+        </inertial>
+        <visual name="frame_visual">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+            <geometry>
+                <mesh filename="package://modukart/meshes/frame.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="frame_collision">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+            <geometry>
+                <mesh filename="package://modukart/meshes/frame.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="front-axil">
+        <inertial>
+            <origin xyz="-7.525312628997583e-07 -0.0013985899550876368 -0.020279689467720453" rpy="0.0 -0.0 9.723461371658034e-63" />
+            <mass value="2.1223411408188753" />
+            <inertia ixx="0.0015108397420215414" iyy="0.010579217970460571" izz="0.011462797436976549" ixy="4.8988403112230905e-06" iyz="3.091773603187964e-05" ixz="1.670210522360452e-08" />
+        </inertial>
+        <visual name="front-axil_visual">
+            <origin xyz="0.0001377568210820357 0.2549999619424091 -0.030000003842252678" rpy="-3.1415926535897922 -1.2562495978386581e-15 -0.0005402110809377047" />
+            <geometry>
+                <mesh filename="package://modukart/meshes/front-axil.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision name="front-axil_collision">
+            <origin xyz="0.0001377568210820357 0.2549999619424091 -0.030000003842252678" rpy="-3.1415926535897922 -1.2562495978386581e-15 -0.0005402110809377047" />
+            <geometry>
+                <mesh filename="package://modukart/meshes/front-axil.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="base_link">
+        </link>
+    <joint name="frame_Revolute-11" type="fixed">
+        <origin xyz="0.030000003736534664 -0.25500000159932606 -3.8422506065671765e-09" rpy="3.1410524425088555 -1.5707963267948954 0" />
+        <parent link="frame" />
+        <child link="Back_wheels" />
+    </joint>
+    <joint name="frame_Revolute-12" type="fixed">
+        <origin xyz="-3.0026015940265438e-09 0.2549999991521039 -0.03000000384225289" rpy="3.1415926535897887 -2.8067689547428576e-15 -0.0005402110809377221" />
+        <parent link="frame" />
+        <child link="front-axil" />
+    </joint>
+    <joint name="front-axil_Revolute-13" type="fixed">
+        <origin xyz="-0.13499998 7.293000000000661e-05 -0.03000000000000001" rpy="3.141592653589793 1.5707963267948966 0" />
+        <parent link="front-axil" />
+        <child link="Front_wheel_left" />
+    </joint>
+    <joint name="front-axil_Revolute-14" type="fixed">
+        <origin xyz="0.13499998 -7.293000000000661e-05 -0.03000000000000001" rpy="3.141592653589793 1.5707963267948966 0" />
+        <parent link="front-axil" />
+        <child link="front_wheel_right" />
+    </joint>
+    <joint name="frame_Rigid-15" type="fixed">
+        <origin xyz="-2.4747685278825318e-09 0.2574999995166038 0.4751080761577447" rpy="-1.5707963267949012 -2.8067689547428576e-15 -0.0005402110809377221" />
+        <parent link="frame" />
+        <child link="camera-module" />
+    </joint>
+    <joint name="base_link_to_frame" type="fixed">
+        <parent link="base_link"/>
+        <child link="frame"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+</robot>
