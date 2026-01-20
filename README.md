@@ -1,14 +1,29 @@
 # Modukart Platform
 
-ROS 2 Project for Modular Kart Platform
+## Introduction
+This is the modular kart platform based on ROS2. The project consists of three pipelines:
+- `control_pipeline`: Sending actuation command to drive the motors.
+- `sensor_pipeline`: ROS2 packages for launching realsense, ToF, USB camera, bgt60tr13c, IMU. Launching multiple sensors for sensor fusion application, e.g. colorized ToF pointcloud with RGB, and depth image overlay.
+- `data_pipeline`: For recording sync image pairs for intrinsic/extrinsic calibration. 
 
-## Bring-Up
+## Bring-Up (Launching motors and sensors)
+
+- `sensor_pipeline`: Launch radar, tof, rgb, imu
+- `control_pipeline`: Launch teleop gamepad on motor
+- For recording data, simply run this and then do `ros2 bag record <topic_name> ## Or simply pass --all`
 
 ```bash
-ros2 launch modukart bringup.launch.py vis:=true run_rviz:=true
+## vis: Visualize radar data using matplotlib
+## run_rviz: Visualize data streaming from rviz
+ros2 launch modukart bringup.launch.py vis:=true run_rviz:=true 
 ```
 
 ## URDF + depth_overlay + rtabmap
+
+### Pre-requisite
+- intrinsics/extrinsic calibration (if the camera are not changed and the camera holder doesn't change, you can use the default setting)
+
+### Run
 
 Play the data:
 
@@ -31,6 +46,21 @@ ros2 launch modukart modukart_slam.launch.py
 In the pop-up Rviz, add `RobotModel`, and select `Description Topic` to `/robot_description`
 
 ## Ground Semantic Mapping Demo
+
+### Overview
+1. We assume that the intrinsic/extrinsic calibration are known, we apply these parameters to overlay the depth value on rgb image.
+2. Then we run rtabmap with rgb-d camera input to simultaneously localize the camera and build the 3D map (colorized pointcloud)
+3. We run the radar surface semantic mapping, which takes a pretrained radar surface detection model. We treat the radar as a downward-facing camera frustum to render the point inside its fov to the corresponding colors representing different classes.
+
+### Pre-requisite
+- intrinsics/extrinsic calibration (if the camera are not changed and the camera holder doesn't change, you can use the default setting)
+- Need a pretrained radar surface classifier based on bgt60tr13c
+
+### Demo
+
+https://github.com/user-attachments/assets/11825dd5-d864-4f83-88e0-66c57aa02558
+
+### Run
 
 Play the data:
 
