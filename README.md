@@ -1,5 +1,13 @@
 # Modukart Platform
 
+```
+cd <path/to/ros2_ws>/src
+git clone --recursive https://github.com/yunjinli/modukart-ros2.git
+cd ../
+## Make sure you download the flexx2 sdk already
+colcon build --symlink-install --cmake-args -DCMAKE_PREFIX_PATH=<royale_sdk_path>/lib/cmake/
+```
+
 ## Introduction
 This is the modular kart platform based on ROS2. The project consists of three pipelines:
 - `control_pipeline`: Sending actuation command to drive the motors.
