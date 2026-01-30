@@ -5,14 +5,21 @@ cd <path/to/ros2_ws>/src
 git clone --recursive https://github.com/yunjinli/modukart-ros2.git
 cd ../
 ## Make sure you download the flexx2 sdk already
+
+sudo rosdep init
+rosdep update
+rosdep install --from-paths src --ignore-src -r -y
+
 colcon build --symlink-install --cmake-args -DCMAKE_PREFIX_PATH=<royale_sdk_path>/lib/cmake/
 ```
 
 ## Introduction
+
 This is the modular kart platform based on ROS2. The project consists of three pipelines:
+
 - `control_pipeline`: Sending actuation command to drive the motors.
 - `sensor_pipeline`: ROS2 packages for launching realsense, ToF, USB camera, bgt60tr13c, IMU. Launching multiple sensors for sensor fusion application, e.g. colorized ToF pointcloud with RGB, and depth image overlay.
-- `data_pipeline`: For recording sync image pairs for intrinsic/extrinsic calibration. 
+- `data_pipeline`: For recording sync image pairs for intrinsic/extrinsic calibration.
 
 ## Bring-Up (Launching motors and sensors)
 
@@ -23,12 +30,13 @@ This is the modular kart platform based on ROS2. The project consists of three p
 ```bash
 ## vis: Visualize radar data using matplotlib
 ## run_rviz: Visualize data streaming from rviz
-ros2 launch modukart bringup.launch.py vis:=true run_rviz:=true 
+ros2 launch modukart bringup.launch.py vis:=true run_rviz:=true
 ```
 
 ## URDF + depth_overlay + rtabmap
 
 ### Pre-requisite
+
 - intrinsics/extrinsic calibration (if the camera are not changed and the camera holder doesn't change, you can use the default setting)
 
 ### Run
@@ -56,11 +64,13 @@ In the pop-up Rviz, add `RobotModel`, and select `Description Topic` to `/robot_
 ## Ground Semantic Mapping Demo
 
 ### Overview
+
 1. We assume that the intrinsic/extrinsic calibration are known, we apply these parameters to overlay the depth value on rgb image.
 2. Then we run rtabmap with rgb-d camera input to simultaneously localize the camera and build the 3D map (colorized pointcloud)
 3. We run the radar surface semantic mapping, which takes a pretrained radar surface detection model. We treat the radar as a downward-facing camera frustum to render the point inside its fov to the corresponding colors representing different classes.
 
 ### Pre-requisite
+
 - intrinsics/extrinsic calibration (if the camera are not changed and the camera holder doesn't change, you can use the default setting)
 - Need a pretrained radar surface classifier based on bgt60tr13c
 
